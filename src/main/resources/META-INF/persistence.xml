@@ -8,13 +8,7 @@
 <persistence-unit name="persistenceUnit" transaction-type="RESOURCE_LOCAL">
     <provider>org.hibernate.ejb.HibernatePersistence</provider>
     <class>com.home.domain.Employee</class>
-   <!-- <class>org.hibernate.ejb.test.Distributor</class>
-    <class>org.hibernate.ejb.test.Item</class>-->
     <properties>
-<!--        <property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.EmbeddedDriver"/>
-        <property name="javax.persistence.jdbc.user" value=""/>
-        <property name="javax.persistence.jdbc.password" value=""/>
-        <property name="javax.persistence.jdbc.url" value="jdbc:derby:testdb"/>-->
         <property name="hibernate.dialect" value="org.hibernate.dialect.Oracle10gDialect"/>
         <property name="hibernate.max_fetch_depth" value="3"/>
         <property name="hibernate.show_sql" value="true"/>

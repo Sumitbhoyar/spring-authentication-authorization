@@ -35,24 +35,6 @@
 
         <!--Database config start-->
         <dependency>
-            <groupId>org.apache.derby</groupId>
-            <artifactId>derby</artifactId>
-            <version>10.10.1.1</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.derby</groupId>
-            <artifactId>derbyclient</artifactId>
-            <version>10.10.1.1</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.hsqldb</groupId>
-            <artifactId>hsqldb</artifactId>
-            <version>2.2.9</version>
-            <scope>runtime</scope>
-        </dependency>
-
-        <dependency>
             <groupId>com.oracle</groupId>
             <artifactId>ojdbc6</artifactId>
             <version>11.2.0</version>
@@ -126,43 +108,6 @@
         <finalName>security</finalName>
         <plugins>
 
- <!--           <plugin>
-                <groupId>com.btmatthews.maven.plugins.inmemdb</groupId>
-                <artifactId>inmemdb-maven-plugin</artifactId>
-                <version>1.4.2</version>
-                <configuration>
-                    <monitorKey>inmemdb</monitorKey>
-                    <monitorPort>11527</monitorPort>
-                </configuration>
-                <executions>
-                    <execution>
-                        <id>run</id>
-                        <goals>
-                            <goal>run</goal>
-                        </goals>
-                        <phase>validate</phase>
-                        <configuration>
-                            <daemon>true</daemon>
-                            <type>derby</type>
-                           <database>testdb</database>
-                            <username></username>
-                            <password></password>
-                            <sources>
-                                <script>
-                                    <sourceFile>src/main/resources/sql/test-data-derby.sql</sourceFile>
-                                </script>
-                            </sources>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>stop</id>
-                        <goals>
-                            <goal>stop</goal>
-                        </goals>
-                        <phase>post-integration-test</phase>
-                    </execution>
-                </executions>
-            </plugin>-->
             <plugin>
                 <groupId>org.apache.tomcat.maven</groupId>
                 <artifactId>tomcat7-maven-plugin</artifactId>
@@ -173,66 +118,7 @@
                 </configuration>
             </plugin>
 
-            <!--<plugin>
-
-                &lt;!&ndash; current version &ndash;&gt;
-                <groupId>fr.avianey.mojo</groupId>
-                <artifactId>hsqldb-maven-plugin</artifactId>
-                <version>1.0.0</version>
-
-                &lt;!&ndash;
-                    default value for in memory jdbc:hsqldb:hsql://localhost/xdb
-                    override only values you want to change
-                &ndash;&gt;
-                <configuration>
-                    <driver>org.hsqldb.jdbcDriver</driver>
-                    <path>mem:test</path>
-                    <address>localhost</address>
-                    <name>xdb</name>
-                    <username>sa</username>
-                    <password></password>
-                    <validationQuery>CREATE TABLE Employee (
-                        username varchar(20) NOT NULL DEFAULT '',
-                        password varchar(20) NOT NULL DEFAULT '',
-                        enabled SMALLINT NOT NULL DEFAULT 1,
-                        PRIMARY KEY (username)
-                        ) ;
-                        CREATE TABLE Roles (
-                        username varchar(20) NOT NULL DEFAULT '',
-                        role varchar(20) NOT NULL DEFAULT '',
-                        PRIMARY KEY (username,role)
-                        ) ;
-                        INSERT INTO Employee (username, password, enabled)
-                        VALUES
-                        ('sumit', 'sumit', 1);
-                        INSERT INTO Roles (username, role)
-                        VALUES
-                        ('sumit', 'Admin'),
-                        ('sumit', 'CEO');
-                    </validationQuery>
-                </configuration>
-
-                &lt;!&ndash; call start and stop &ndash;&gt;
-                <executions>
-                    <execution>
-                        <id>start-hsqldb</id>
-                        <phase>validate</phase>
-                        <goals>
-                            <goal>start</goal>
-                        </goals>
-
-                    </execution>
-                    <execution>
-                        <id>stop-hsqldb</id>
-                        <phase>deploy</phase>
-                        <goals>
-                            <goal>stop</goal>
-                        </goals>
-                    </execution>
-                </executions>
-
-            </plugin>
--->        </plugins>
+        </plugins>
     </build>
 
 </project>
