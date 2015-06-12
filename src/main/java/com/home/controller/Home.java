@@ -26,7 +26,7 @@ public class Home{
 
         model.addAttribute("serverTime", formattedDate);
         model.addAttribute("loggedInUser", loggedInUser);
-
+		//new comment
         return "home";
     }
 
